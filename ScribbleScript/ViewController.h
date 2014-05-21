@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
 
-- (IBAction)selectedColor:(id)sender;
+- (IBAction)colorSelected: (id)sender;
 - (IBAction)eraserPressed:(id)sender;
 - (IBAction)reset:(id)sender;
 - (IBAction)settings:(id)sender;

@@ -14,7 +14,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController;
 @synthesize mainImage;
 @synthesize tempDrawImage;
 
@@ -36,15 +36,15 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
+/*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-
-- (IBAction)colorSelected:(id)sender {
+*/
+- (IBAction)colorSelected: (id)sender {
     
-    UIButton * selectedColor = (UIButton*)sender;
+    UIButton *selectedColor = (UIButton*)sender;
     
     switch(selectedColor.tag)
     {
@@ -149,6 +149,7 @@
             blue = 0.0/255.0;
             break;
     }
+    opacity = 1.0;
 }
 
 - (IBAction)eraserPressed:(id)sender {
@@ -178,7 +179,7 @@
                                                     otherButtonTitles:@"Save to Camera Roll", @"Tweet it!", @"Cancel", nil];
     [actionSheet showInView:self.view];
 }
-/*
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1)
@@ -229,7 +230,7 @@
         UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
 }
-*/
+
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     // Was there an error?
@@ -297,7 +298,7 @@
     UIGraphicsEndImageContext();
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     SettingsViewController * settingsVC = (SettingsViewController *)segue.destinationViewController;
     settingsVC.delegate = self;
@@ -307,7 +308,7 @@
     settingsVC.green = green;
     settingsVC.blue = blue;
     
-}
+}*/
 
 #pragma mark - SettingsViewControllerDelegate methods
 
